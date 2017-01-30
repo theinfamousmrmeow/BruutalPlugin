@@ -1,0 +1,13 @@
+{
+"manifest_version": 2,
+    "name": "BrütalChrome",
+    "description": "Makes the internet a more Brütal place.",
+    "version": "0.1",
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["bruutal.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
