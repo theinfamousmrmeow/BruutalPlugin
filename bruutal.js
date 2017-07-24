@@ -1,22 +1,26 @@
 //Forked from https://github.com/laurenorsini/caaaaarbs, which is in turned based on:
-//credit goes to Steven Frank of Cloud to Butt (https://github.com/panicsteve/cloud-to-butt/)
+//bulk of credit goes to Steven Frank of Cloud to Butt (https://github.com/panicsteve/cloud-to-butt/)
 
 walk(document.body);
 
 function walk(node)
 {
-	// I stole this function from here:
-	// http://is.gd/mwZp7E
 
 	var child, next;
+	
+		
+	if (node.tagName.toLowerCase() == 'input' || node.tagName.toLowerCase() == 'textarea'
+	    || node.classList.indexOf('ace_editor') > -1) {
+		return;
+	}
 
 	switch ( node.nodeType )
 	{
-		case 1:
-		case 9:  //Text type node
-		case 11:
+		case 1: //Element
+		case 9: //Whole document
+		case 11: //Document fragment
 			child = node.firstChild;
-			while ( child )
+			while ( child )//Traverse list of nodes
 			{
 				next = child.nextSibling;
 				walk(child);
@@ -32,6 +36,7 @@ function walk(node)
 
 function handleText(textNode)
 {
+	//TODO:  Handle this more efficiently...
 	var v = textNode.nodeValue;
 	v = v.replace(/\bcu\b/g, "ku");
 	v = v.replace(/\bblack\b/g, "blackest ov the black");
