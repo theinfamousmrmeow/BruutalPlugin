@@ -35,10 +35,10 @@ function handleText(textNode)
 	var v = textNode.nodeValue;
 	v = v.replace(/\bcu\b/g, "ku");
 	v = v.replace(/\bblack\b/g, "blackest ov the black");
-	v = v.replace(/\bJesus\b/g, "Satan");
-	v = v.replace(/\bChrist\b/g, "Lucifer");
+	v = v.replace(/\bJesus\b/g, "Lucifer");
+	v = v.replace(/\bChrist\b/g, "Antichrist");
 	v = v.replace(/\bGod\b/g, "Baphomet");
-	v = v.replace(/\bbrutal\b/g, "BRUTAL");
+	v = v.replace(/\bbrutal\b/g, "brütal");
 	v = v.replace(/\bu\b/g, "ü");
 	textNode.nodeValue = v;
 }
