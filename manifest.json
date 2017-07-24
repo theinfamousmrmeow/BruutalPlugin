@@ -1,8 +1,9 @@
 {
 "manifest_version": 2,
     "name": "BrütalChrome",
+    "short_name": "BrütalChrome",
     "description": "Makes the internet a more Brütal place.",
-    "version": "0.1",
+    "version": "0.1.1",
     "content_scripts": [
         {
             "matches": ["*://*/*"],
